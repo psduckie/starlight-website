@@ -23,7 +23,7 @@
                 <a href="index.html"><img src="images/emblem.png" class="center"></a>
             </div>
             <div class="col-lg-1">
-                <a href="news.html">
+                <a href="news.php">
                     <nav>News</nav>
                 </a>
             </div>
