@@ -1,21 +1,40 @@
 body {
-    background-color: midnightblue;
-    color: yellow;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: midnightblue;
+  color: yellow;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a {
-    color: orangered;
+  color: orangered;
+}
+
+nav {
+  margin-top: 20px;
+  font-size: larger;
+  text-align: center;
 }
 
 .bolder {
-    font-weight: bolder;
+  font-weight: bolder;
+}
+
+.italic {
+  font-style: italic;
 }
 
 .center {
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+hr {
+  border: 0;
+  height: 0;
+  box-shadow: 0 0 10px 1px yellow;
+}
+
+.newsarticle {
+  margin-top: 20px;
 }
