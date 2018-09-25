@@ -23,7 +23,7 @@
                 <a href="index.html"><img src="images/emblem.png" class="center"></a>
             </div>
             <div class="col-lg-1">
-                <a href="news.html">
+                <a href="news.php">
                     <nav>News</nav>
                 </a>
             </div>
@@ -46,6 +46,24 @@
         <h1 class="center bolder">Welcome to the Starlight website!</h1>
         <img src="images/emblem.png" class="center">
         <h2 class="center">This page is currently under construction.</h2>
+        <?php
+            try {
+                $link = new \PDO("mysql:host=162.241.218.136;dbname=psduckie_starlight;charset=utf8mb4", "psduckie_strlt", "2d/sX;pVf:$*H?K&fxq4B<}U'mg}cU@m[Rr", array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION, \PDO::ATTR_PERSISTENT => false));
+                
+                $handle = $link->prepare("SELECT title, newsDate, author, article FROM news");
+
+                $handle->execute();
+
+                $result = $handle->fetchAll(\PDO::FETCH_OBJ);
+
+                foreach($result as $row) {
+                    print($row->article);
+                }
+            }
+            catch(\PDOException $ex) {
+                print($ex->getMessage());
+            }
+        ?>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
