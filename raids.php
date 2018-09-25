@@ -41,7 +41,7 @@
                     </li>
                 </ul>
             </nav>
-            <h1>Raiding</h1>
+            <h1 class="center bolder">Raiding</h1>
             <div id="raids" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ul class="carousel-indicators">
@@ -53,13 +53,37 @@
                 <!-- The slideshow -->
                 <div class="carousel-inner">
                     <div class="carousel-item">
-                        <h1>A Realm Reborn</h1>
+                        <h1 class="center">A Realm Reborn</h1>
                     </div>
                     <div class="carousel-item">
-                        <h1>Heavensward</h1>
+                        <h1 class="center">Heavensward</h1>
                     </div>
                     <div class="carousel-item active">
-                        <h1>Stormblood</h1>
+                        <h1 class="center">Stormblood</h1>
+                        <?php
+                            try {
+                                $link = new \PDO("mysql:host=162.241.218.136;dbname=psduckie_starlight;charset=utf8mb4", "psduckie_strlt", "2d/sX;pVf:$*H?K&fxq4B<}U'mg}cU@m[Rr", array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION, \PDO::ATTR_PERSISTENT => false));
+                
+                                $handle = $link->prepare("SELECT expack, tier, raidName, picPath, bosses, downedBossesNormal, downedBossesSavage FROM raids WHERE expack = 4 ORDER BY tier DESC");
+                
+                                $handle->execute();
+                
+                                $result = $handle->fetchAll(\PDO::FETCH_OBJ);
+                                
+                                print("<div class=\"card-columns\">")
+
+                                foreach($result as $row) {
+                                    print("<div class=\"card\"><img class=\"card-img-top\" src=\"");
+                                    print($row->picPath);
+                                    print("\"><div class=\"card-header\"><h4 class=\"card-title\">");
+                                    print($row->raidName);
+                                    print("</h4>");
+                                }
+                            }
+                            catch(\PDOException $ex) {
+                                print($ex->getMessage());
+                            }
+                            ?>
                     </div>
                 </div>
 
