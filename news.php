@@ -43,9 +43,9 @@
                 <nav>Contact</nav>
             </div>
         </div>
-        <h1 class="center bolder">Welcome to the Starlight website!</h1>
-        <img src="images/emblem.png" class="center">
-        <h2 class="center">This page is currently under construction.</h2>
+        <hr>
+        <h1 class="center bolder">News</h1>
+        <hr>
         <?php
             try {
                 $link = new \PDO("mysql:host=162.241.218.136;dbname=psduckie_starlight;charset=utf8mb4", "psduckie_strlt", "2d/sX;pVf:$*H?K&fxq4B<}U'mg}cU@m[Rr", array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION, \PDO::ATTR_PERSISTENT => false));
@@ -57,7 +57,15 @@
                 $result = $handle->fetchAll(\PDO::FETCH_OBJ);
 
                 foreach($result as $row) {
+                    print("<div class=\"newsarticle\"><h3 class=\"bolder\">");
+                    print($row->title);
+                    print("</h3><br><h5 class=\"italic\">Written on ");
+                    print($row->newsDate);
+                    print(" by ");
+                    print($row->author);
+                    print("</h5><br>");
                     print($row->article);
+                    print("</div>");
                 }
             }
             catch(\PDOException $ex) {
