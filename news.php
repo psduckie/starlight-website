@@ -18,39 +18,37 @@
 
 <body>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-1">
-                <a href="index.html"><img src="images/emblem.png" class="center"></a>
-            </div>
-            <div class="col-lg-1">
-                <a href="news.php">
-                    <nav>News</nav>
-                </a>
-            </div>
-            <div class="col-lg-1">
-                <nav>Roster</nav>
-            </div>
-            <div class="col-lg-1">
-                <nav>Forums</nav>
-            </div>
-            <div class="col-lg-1">
-                <nav>Calendar</nav>
-            </div>
-            <div class="col-lg-1">
-                <nav>Raiding</nav>
-            </div>
-            <div class="col-lg-1">
-                <nav>Contact</nav>
-            </div>
-        </div>
-        <hr>
+        <nav class="navbar navbar-expand-sm navbar-dark">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/emblem.png" alt="Starlight Clan">
+            </a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="news.php">News</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Roster</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Forums</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Calendar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Raiding</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </nav>
         <h1 class="center bolder">News</h1>
-        <hr>
         <?php
             try {
                 $link = new \PDO("mysql:host=162.241.218.136;dbname=psduckie_starlight;charset=utf8mb4", "psduckie_strlt", "2d/sX;pVf:$*H?K&fxq4B<}U'mg}cU@m[Rr", array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION, \PDO::ATTR_PERSISTENT => false));
                 
-                $handle = $link->prepare("SELECT title, newsDate, author, article FROM news");
+                $handle = $link->prepare("SELECT title, newsDate, author, article FROM news ORDER BY newsDate DESC");
 
                 $handle->execute();
 
