@@ -36,7 +36,7 @@
                     <a class="nav-link" href="#">Calendar</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Raiding</a>
+                    <a class="nav-link" href="raids.php">Raiding</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact</a>
