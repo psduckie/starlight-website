@@ -54,17 +54,113 @@
                 <div class="carousel-inner">
                     <div class="carousel-item">
                         <h1 class="center">A Realm Reborn</h1>
-                    </div>
+                        <?php
+                            try {
+                                $link = new \PDO("mysql:host=162.241.218.136;dbname=psduckie_starlight;charset=utf8mb4", "psduckie_strlt", "2d/sX;pVf:$*H?K&fxq4B<}U'mg}cU@m[Rr", array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION, \PDO::ATTR_PERSISTENT => false));
+                
+                                $handle = $link->prepare("SELECT expack, tier, raidName, picPath, bosses, downedBossesNormal, downedBossesSavage FROM raids WHERE expack = 2 ORDER BY tier ASC");
+                
+                                $handle->execute();
+                
+                                $result = $handle->fetchAll(\PDO::FETCH_OBJ);
+                                
+                                print("<div class=\"card-columns\">");
+
+                                foreach($result as $row) {
+                                    print("<div class=\"card bg-dark\"><img class=\"card-img-top\" src=\"");
+                                    print($row->picPath);
+                                    print("\"><div class=\"card-header\"><h4 class=\"card-title\">");
+                                    print($row->raidName);
+                                    print("</h4></div><div class=\"card-body\"><div class=\"progress\">");
+                                    if ($row->downedBossesSavage >= $row->bosses) { // Raid is cleared on savage
+                                        print("<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-danger\" style=\"width:100%\">Savage</div></div>");
+                                    }
+                                    elseif ($row->downedBossesNormal >= $row->bosses) { // Raid is cleared on normal but not savage
+                                        $savagePercent = ($row->downedBossesSavage / $row->bosses) * 100;
+                                        $normalPercent = 100;
+                                        $percentDifference = $normalPercent - $savagePercent;
+                                        print("<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-danger\" style=\"width:");
+                                        print($savagePercent);
+                                        print("%\">Savage</div><div class=\"progress-bar progress-bar-striped progress-bar-animated\" style=\"width:");
+                                        print($percentDifference);
+                                        print("%\">Normal</div></div>");
+                                    }
+                                    else { // Raid is not cleared on either difficulty
+                                        $savagePercent = ($row->downedBossesSavage / $row->bosses) * 100;
+                                        $normalPercent = ($row->downedBossesNormal / $row->bosses) * 100;
+                                        $percentDifference = $normalPercent - $savagePercent;
+                                        print("<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-danger\" style=\"width:");
+                                        print($savagePercent);
+                                        print("%\">Savage</div><div class=\"progress-bar progress-bar-striped progress-bar-animated\" style=\"width:");
+                                        print($percentDifference);
+                                        print("%\">Normal</div></div>");
+                                    }
+                                    print("</div></div>");
+                                }
+                            }
+                            catch(\PDOException $ex) {
+                                print($ex->getMessage());
+                            }
+                            ?>
+                   </div></div>
                     <div class="carousel-item">
                         <h1 class="center">Heavensward</h1>
-                    </div>
+                        <?php
+                            try {
+                                $link = new \PDO("mysql:host=162.241.218.136;dbname=psduckie_starlight;charset=utf8mb4", "psduckie_strlt", "2d/sX;pVf:$*H?K&fxq4B<}U'mg}cU@m[Rr", array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION, \PDO::ATTR_PERSISTENT => false));
+                
+                                $handle = $link->prepare("SELECT expack, tier, raidName, picPath, bosses, downedBossesNormal, downedBossesSavage FROM raids WHERE expack = 3 ORDER BY tier ASC");
+                
+                                $handle->execute();
+                
+                                $result = $handle->fetchAll(\PDO::FETCH_OBJ);
+                                
+                                print("<div class=\"card-columns\">");
+
+                                foreach($result as $row) {
+                                    print("<div class=\"card bg-dark\"><img class=\"card-img-top\" src=\"");
+                                    print($row->picPath);
+                                    print("\"><div class=\"card-header\"><h4 class=\"card-title\">");
+                                    print($row->raidName);
+                                    print("</h4></div><div class=\"card-body\"><div class=\"progress\">");
+                                    if ($row->downedBossesSavage >= $row->bosses) { // Raid is cleared on savage
+                                        print("<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-danger\" style=\"width:100%\">Savage</div></div>");
+                                    }
+                                    elseif ($row->downedBossesNormal >= $row->bosses) { // Raid is cleared on normal but not savage
+                                        $savagePercent = ($row->downedBossesSavage / $row->bosses) * 100;
+                                        $normalPercent = 100;
+                                        $percentDifference = $normalPercent - $savagePercent;
+                                        print("<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-danger\" style=\"width:");
+                                        print($savagePercent);
+                                        print("%\">Savage</div><div class=\"progress-bar progress-bar-striped progress-bar-animated\" style=\"width:");
+                                        print($percentDifference);
+                                        print("%\">Normal</div></div>");
+                                    }
+                                    else { // Raid is not cleared on either difficulty
+                                        $savagePercent = ($row->downedBossesSavage / $row->bosses) * 100;
+                                        $normalPercent = ($row->downedBossesNormal / $row->bosses) * 100;
+                                        $percentDifference = $normalPercent - $savagePercent;
+                                        print("<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-danger\" style=\"width:");
+                                        print($savagePercent);
+                                        print("%\">Savage</div><div class=\"progress-bar progress-bar-striped progress-bar-animated\" style=\"width:");
+                                        print($percentDifference);
+                                        print("%\">Normal</div></div>");
+                                    }
+                                    print("</div></div>");
+                                }
+                            }
+                            catch(\PDOException $ex) {
+                                print($ex->getMessage());
+                            }
+                            ?>
+                    </div></div>
                     <div class="carousel-item active">
                         <h1 class="center">Stormblood</h1>
                         <?php
                             try {
                                 $link = new \PDO("mysql:host=162.241.218.136;dbname=psduckie_starlight;charset=utf8mb4", "psduckie_strlt", "2d/sX;pVf:$*H?K&fxq4B<}U'mg}cU@m[Rr", array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION, \PDO::ATTR_PERSISTENT => false));
                 
-                                $handle = $link->prepare("SELECT expack, tier, raidName, picPath, bosses, downedBossesNormal, downedBossesSavage FROM raids WHERE expack = 4 ORDER BY tier DESC");
+                                $handle = $link->prepare("SELECT expack, tier, raidName, picPath, bosses, downedBossesNormal, downedBossesSavage FROM raids WHERE expack = 4 ORDER BY tier ASC");
                 
                                 $handle->execute();
                 
