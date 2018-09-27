@@ -70,14 +70,14 @@
                 
                                 $result = $handle->fetchAll(\PDO::FETCH_OBJ);
                                 
-                                print("<div class=\"card-columns\">")
+                                print("<div class=\"card-columns\">");
 
                                 foreach($result as $row) {
-                                    print("<div class=\"card\"><img class=\"card-img-top\" src=\"");
+                                    print("<div class=\"card bg-dark\"><img class=\"card-img-top\" src=\"");
                                     print($row->picPath);
                                     print("\"><div class=\"card-header\"><h4 class=\"card-title\">");
                                     print($row->raidName);
-                                    print("</h4>");
+                                    print("</h4></div></div>");
                                 }
                             }
                             catch(\PDOException $ex) {
