@@ -77,7 +77,31 @@
                                     print($row->picPath);
                                     print("\"><div class=\"card-header\"><h4 class=\"card-title\">");
                                     print($row->raidName);
-                                    print("</h4></div></div>");
+                                    print("</h4></div><div class=\"card-body\"><div class=\"progress\">");
+                                    if ($row->downedBossesSavage >= $row->bosses) { // Raid is cleared on savage
+                                        print("<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-danger\" style=\"width:100%\">Savage</div></div>");
+                                    }
+                                    elseif ($row->downedBossesNormal >= $row->bosses) { // Raid is cleared on normal but not savage
+                                        $savagePercent = ($row->downedBossesSavage / $row->bosses) * 100;
+                                        $normalPercent = 100;
+                                        $percentDifference = $normalPercent - $savagePercent;
+                                        print("<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-danger\" style=\"width:");
+                                        print($savagePercent);
+                                        print("%\">Savage</div><div class=\"progress-bar progress-bar-striped progress-bar-animated\" style=\"width:");
+                                        print($percentDifference);
+                                        print("%\">Normal</div></div>");
+                                    }
+                                    else { // Raid is not cleared on either difficulty
+                                        $savagePercent = ($row->downedBossesSavage / $row->bosses) * 100;
+                                        $normalPercent = ($row->downedBossesNormal / $row->bosses) * 100;
+                                        $percentDifference = $normalPercent - $savagePercent;
+                                        print("<div class=\"progress-bar progress-bar-striped progress-bar-animated bg-danger\" style=\"width:");
+                                        print($savagePercent);
+                                        print("%\">Savage</div><div class=\"progress-bar progress-bar-striped progress-bar-animated\" style=\"width:");
+                                        print($percentDifference);
+                                        print("%\">Normal</div></div>");
+                                    }
+                                    print("</div></div>");
                                 }
                             }
                             catch(\PDOException $ex) {
