@@ -31,7 +31,7 @@
                         <a class="nav-link" href="#">Forums</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Calendar</a>
+                        <a class="nav-link" href="calendar.html">Calendar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="raids.php">Raiding</a>
