@@ -13,7 +13,7 @@
     <!-- Custom styles-->
     <link rel="stylesheet" href="styles/styles.css">
 
-    <title>Starlight Clan News</title>
+    <title>Starlight Clan Event Calendar</title>
 </head>
 
 <body>
@@ -22,6 +22,7 @@
             <a class="navbar-brand" href="index.html">
                 <img src="images/emblem.png" alt="Starlight Clan">
             </a>
+
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="news.php">News</a>
@@ -43,34 +44,10 @@
                 </li>
             </ul>
         </nav>
-        <h1 class="center bolder">News</h1>
-        <?php
-            try {
-                $link = new \PDO("mysql:host=162.241.218.136;dbname=psduckie_starlight;charset=utf8mb4", "psduckie_strlt", "2d/sX;pVf:$*H?K&fxq4B<}U'mg}cU@m[Rr", array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION, \PDO::ATTR_PERSISTENT => false));
-                
-                $handle = $link->prepare("SELECT title, newsDate, author, article FROM news ORDER BY newsDate DESC");
-
-                $handle->execute();
-
-                $result = $handle->fetchAll(\PDO::FETCH_OBJ);
-
-                foreach($result as $row) {
-                    print("<div class=\"newsarticle\"><h3 class=\"bolder\">");
-                    print($row->title);
-                    print("</h3><br><h5 class=\"italic\">Written on ");
-                    print($row->newsDate);
-                    print(" by ");
-                    print($row->author);
-                    print("</h5><br>");
-                    print($row->article);
-                    print("</div>");
-                }
-            }
-            catch(\PDOException $ex) {
-                print($ex->getMessage());
-            }
-        ?>
+        <h1 class="center bolder">Event Calendar</h1>
+        <iframe class="center" src="https://calendar.google.com/calendar/embed?src=bhas75pskphagkj8gh0pg0ra44%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
     </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
