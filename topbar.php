@@ -1,5 +1,5 @@
         <nav class="navbar navbar-expand-sm navbar-dark">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.php">
                 <img src="images/emblem.png" alt="Starlight Clan">
             </a>
 
