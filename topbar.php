@@ -8,10 +8,10 @@
             <a class="nav-link" href="news.php">News</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Players</a>
+            <a class="nav-link" href="#">Roster</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Characters</a>
+            <a class="nav-link" href="#">RP Characters</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Forums</a>
