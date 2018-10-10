@@ -20,7 +20,21 @@
     <div class="container-fluid">
         <?php include('topbar.php') ?>
         <h1 class="center bolder">Free Company Roster</h1>
-        <iframe class="center" src="https://na.finalfantasyxiv.com/lodestone/freecompany/9228579323924009502/member/" style="border: 0" frameborder="0" scrolling="yes"></iframe>
+        <table>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Rank</th>
+            </tr>
+        <?php
+            $response = file_get_contents('https://xivapi.com/freecompany/9228579323924009502?data=FCM');
+//            echo($response);
+            $response = json_decode($response);
+            foreach($response->FreeCompanyMembers as $value) {
+                echo("<tr><td><img src=\"$value->Avatar\"></td><td>$value->Name</td><td>$value->Rank</td></tr>");
+            }
+        ?>
+        </table>
     </div>
 
     <!-- Optional JavaScript -->

@@ -8,7 +8,7 @@
             <a class="nav-link" href="news.php">News</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Roster</a>
+            <a class="nav-link" href="roster.php">Roster</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">RP Characters</a>
