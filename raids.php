@@ -17,7 +17,7 @@
     <body>
         <div class="container-fluid">
             <?php include('topbar.php') ?>
-            <h1 class="center bolder">Raiding</h1>
+            <h1 class="center display-1">Raiding</h1>
             <div id="raids" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ul class="carousel-indicators">
@@ -29,7 +29,7 @@
                 <!-- The slideshow -->
                 <div class="carousel-inner">
                     <div class="carousel-item">
-                        <h1 class="center">A Realm Reborn</h1>
+                        <h2 class="center display-4">A Realm Reborn</h2>
                         <?php
                             try {
                                 $link = new \PDO("mysql:host=162.241.218.136;dbname=psduckie_starlight;charset=utf8mb4", "psduckie_strlt", "2d/sX;pVf:$*H?K&fxq4B<}U'mg}cU@m[Rr", array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION, \PDO::ATTR_PERSISTENT => false));
@@ -80,7 +80,7 @@
                             ?>
                    </div></div>
                     <div class="carousel-item">
-                        <h1 class="center">Heavensward</h1>
+                        <h2 class="center display-4">Heavensward</h2>
                         <?php
                             try {
                                 $link = new \PDO("mysql:host=162.241.218.136;dbname=psduckie_starlight;charset=utf8mb4", "psduckie_strlt", "2d/sX;pVf:$*H?K&fxq4B<}U'mg}cU@m[Rr", array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION, \PDO::ATTR_PERSISTENT => false));
@@ -131,7 +131,7 @@
                             ?>
                     </div></div>
                     <div class="carousel-item active">
-                        <h1 class="center">Stormblood</h1>
+                        <h2 class="center display-4">Stormblood</h2>
                         <?php
                             try {
                                 $link = new \PDO("mysql:host=162.241.218.136;dbname=psduckie_starlight;charset=utf8mb4", "psduckie_strlt", "2d/sX;pVf:$*H?K&fxq4B<}U'mg}cU@m[Rr", array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION, \PDO::ATTR_PERSISTENT => false));

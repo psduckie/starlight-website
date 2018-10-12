@@ -19,7 +19,7 @@
 <body>
     <div class="container-fluid">
         <?php include('topbar.php') ?>
-        <h1 class="center bolder">Event Calendar</h1>
+        <h1 class="center display-1">Event Calendar</h1>
         <iframe class="center" src="https://calendar.google.com/calendar/embed?src=bhas75pskphagkj8gh0pg0ra44%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
     </div>
 

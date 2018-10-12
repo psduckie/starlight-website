@@ -19,21 +19,90 @@
 <body>
     <div class="container-fluid">
         <?php include('topbar.php') ?>
-        <h1 class="center bolder">Free Company Roster</h1>
-        <table>
+        <h1 class="center display-1">Free Company Roster</h1>
+        <h2 class="center display-4">The Leader</h2>
+        <table class="table">
+        <thead>
             <tr>
                 <th></th>
                 <th>Name</th>
                 <th>Rank</th>
             </tr>
+            </thead><tbody>
         <?php
             $response = file_get_contents('https://xivapi.com/freecompany/9228579323924009502?data=FCM');
 //            echo($response);
             $response = json_decode($response);
             foreach($response->FreeCompanyMembers as $value) {
-                echo("<tr><td><img src=\"$value->Avatar\"></td><td>$value->Name</td><td>$value->Rank</td></tr>");
+                if ($value->Rank == "Leader" or $value->Rank == "Leader Alt") {
+                    echo("<tr><td><img src=\"$value->Avatar\"></td><td>$value->Name</td><td>$value->Rank</td></tr>");
+                }
             }
         ?>
+        </tbody>
+        </table>
+        <h2 class="center display-4">The Council</h2>
+        <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Rank</th>
+            </tr>
+            </thead><tbody>
+        <?php
+            $response = file_get_contents('https://xivapi.com/freecompany/9228579323924009502?data=FCM');
+//            echo($response);
+            $response = json_decode($response);
+            foreach($response->FreeCompanyMembers as $value) {
+                if ($value->Rank == "Starlit Council" or $value->Rank == "Council Alt") {
+                    echo("<tr><td><img src=\"$value->Avatar\"></td><td>$value->Name</td><td>$value->Rank</td></tr>");
+                }
+            }
+        ?>
+        </tbody>
+        </table>
+        <h2 class="center display-4">The Starlit</h2>
+        <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Rank</th>
+            </tr>
+            </thead><tbody>
+        <?php
+            $response = file_get_contents('https://xivapi.com/freecompany/9228579323924009502?data=FCM');
+//            echo($response);
+            $response = json_decode($response);
+            foreach($response->FreeCompanyMembers as $value) {
+                if ($value->Rank == "Starlit" or $value->Rank == "Starlit Alt" or $value->Rank == "Newly Starlit") {
+                    echo("<tr><td><img src=\"$value->Avatar\"></td><td>$value->Name</td><td>$value->Rank</td></tr>");
+                }
+            }
+        ?>
+        </tbody>
+        </table>
+        <h2 class="center display-4">The Inactive</h2>
+        <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Rank</th>
+            </tr>
+            </thead><tbody>
+        <?php
+            $response = file_get_contents('https://xivapi.com/freecompany/9228579323924009502?data=FCM');
+//            echo($response);
+            $response = json_decode($response);
+            foreach($response->FreeCompanyMembers as $value) {
+                if ($value->Rank == "Inactive") {
+                    echo("<tr><td><img src=\"$value->Avatar\"></td><td>$value->Name</td><td>$value->Rank</td></tr>");
+                }
+            }
+        ?>
+        </tbody>
         </table>
     </div>
 

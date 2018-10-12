@@ -19,7 +19,7 @@
 <body>
     <div class="container-fluid">
         <?php include('topbar.php') ?>
-        <h1 class="center bolder">News</h1>
+        <h1 class="center display-1">News</h1>
         <?php
             try {
                 $link = new \PDO("mysql:host=162.241.218.136;dbname=psduckie_starlight;charset=utf8mb4", "psduckie_strlt", "2d/sX;pVf:$*H?K&fxq4B<}U'mg}cU@m[Rr", array(\PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION, \PDO::ATTR_PERSISTENT => false));
