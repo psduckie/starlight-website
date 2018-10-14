@@ -20,6 +20,8 @@
     <div class="container-fluid">
         <?php include('topbar.php') ?>
         <h1 class="center display-1">Free Company Roster</h1>
+        <div class="row">
+        <div class="col-12 col-lg-4">
         <h2 class="center display-4">The Leader</h2>
         <table class="table">
         <thead>
@@ -41,6 +43,8 @@
         ?>
         </tbody>
         </table>
+        </div>
+        <div class="col-12 col-lg-4">
         <h2 class="center display-4">The Council</h2>
         <table class="table">
         <thead>
@@ -62,6 +66,8 @@
         ?>
         </tbody>
         </table>
+        </div>
+        <div class="col-12 col-lg-4">
         <h2 class="center display-4">The Starlit</h2>
         <table class="table">
         <thead>
@@ -83,6 +89,8 @@
         ?>
         </tbody>
         </table>
+        </div>
+        </div>
         <h2 class="center display-4">The Inactive</h2>
         <table class="table">
         <thead>

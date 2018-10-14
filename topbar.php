@@ -14,7 +14,7 @@
             <a class="nav-link" href="#">RP Characters</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Forums</a>
+            <a class="nav-link" href="forums/">Forums</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="calendar.php">Calendar</a>
