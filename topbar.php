@@ -11,7 +11,7 @@
             <a class="nav-link" href="roster.php">Roster</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">RP Characters</a>
+            <a class="nav-link" href="characters.php">RP Characters</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="forums/">Forums</a>
